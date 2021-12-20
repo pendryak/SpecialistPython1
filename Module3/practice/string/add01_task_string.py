@@ -8,3 +8,17 @@ text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat
 # Примечание: обратите внимание на перенос длинной строки на новую строку
 
 # TODO: your code here
+count = 0
+i = 0
+for c in text:
+    if c.isalpha():
+        i += 1
+    elif c == ' ':
+        if i > 7:
+            count += 1
+        i = 0
+    else:
+        continue
+if i > 7:
+    count += 1
+print(count)
