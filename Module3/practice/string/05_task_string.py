@@ -5,4 +5,9 @@
 # Пример строки перевертыша: "И темен город. Мороз узором дорог не мети."
 
 # TODO: your code here
-
+text = "И темен город. Мороз узором дорог не мети."
+s = "".join(c for c in text if c.isalpha()).lower()
+if s == s[::-1]:
+    print("YES")
+else:
+    print("NO")
