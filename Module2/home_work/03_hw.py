@@ -31,3 +31,13 @@
 # 20 199.8 Rub.
 
 # TODO: your code here
+
+
+def home3():
+    cost = float(input("cost = "))
+    i = 1
+    while i < 21:
+        print("{0} {1:2} Rub.".format(i,cost*i))
+        i += 1
+        
+home3()
