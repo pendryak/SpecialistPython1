@@ -14,3 +14,17 @@
 #    #
 #    #
 ######
+
+def home4():
+    a = int(input("a = "))
+    line = ''
+    for i in range(a):
+        for j in range(a):
+            if i % (a-1) == 0 or j % (a-1) == 0:
+                line += '#'
+            else:
+                line += ' '
+        print(line)
+        line = ''
+     
+home4()
