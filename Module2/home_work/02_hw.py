@@ -8,3 +8,14 @@
 # Например, 1 корова, 2 коровы, 5 коров, 125 коров.
 
 # TODO: your code here
+def home2():
+    cows = int(input("cows = "))
+    r = cows % 10
+    if r == 1 and cows != 11:
+        print("На лугу пасется",cows,"корова")
+    elif r >= 2 and r <= 4 and (cows < 10 or cows > 20):
+        print("На лугу пасется",cows,"коровы")
+    else:
+        print("На лугу пасется",cows, "коров")
+        
+home2()
