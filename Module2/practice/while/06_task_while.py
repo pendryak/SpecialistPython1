@@ -17,3 +17,22 @@
 # 284 220
 
 # TODO: your code here
+
+
+def prac_while_6():
+    lim = int(input("n = "))
+    i = 1
+    sums = [1] * (lim + 1)
+    while i <= lim:
+        for x in range(2, int(math.sqrt(i)) + 1):
+            if (i % x == 0):
+                sums[i] += x
+                if (x != int(i / x)):
+                    sums[i] += int(i / x)
+        i += 1
+    for i in range(1, lim + 1):
+        for j in range(i + 1, lim + 1):
+            if (i == sums[j] and j == sums[i]):
+                print(i, j)
+                
+prac_while_6()
