@@ -2,8 +2,12 @@
 # Функция должна вызываться с любым количеством аргументов
 
 def average(*args):
-    # TODO: your code here
-    pass
+    sum = 0
+    i = 0
+    for arg in args:
+        sum += arg
+        i += 1
+    return(sum/i)
 
 
 print(average(3, 4, 8))
