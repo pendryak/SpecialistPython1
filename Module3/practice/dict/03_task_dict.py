@@ -27,22 +27,32 @@ staff = [
     },
 ]
 # Вычислите:
-print("Имя и Фамилию сотрудника с самой высокой зарплатой:")
+staff.sort(key=operator.itemgetter('salary'))
+print("Имя и Фамилию сотрудника с самой высокой зарплатой:",staff[-1]['name'],staff[-1]['surname'])
 
-# TODO: your code here
+print("Имя и Фамилию сотрудника с самой низкой зарплатой:",staff[0]['name'],staff[0]['surname'])
 
-print("Имя и Фамилию сотрудника с самой низкой зарплатой:")
-
-# TODO: your code here
-
-print("Среднеарифметическую зарплату всех сотрудников")
-
-# TODO: your code here
-
-print("Количество однофамильцев в организации")
-
-# TODO: your code here
+sal = sum([d["salary"] for d in staff])
+print("Среднеарифметическую зарплату всех сотрудников: ",sal/len(staff))
 
 print("*Список всех сотрудников(Имя и Фамилию) в порядке возрастания их зарплаты")
+for empl in staff:
+    print("{0} {1}".format(empl['name'],empl['surname']))
 
-# TODO: your code here
+
+staff.sort(key=operator.itemgetter('surname'))
+count = 0
+c = 0
+surname = staff[0]['surname']
+for i in range(1,len(staff)):
+    if staff[i]['surname'] == surname:
+        c += 1
+    else:
+        surname = staff[i]['surname']
+        if c != 0:
+            count += c + 1
+            c = 0
+if c != 0:
+    count += c + 1
+
+print("Количество однофамильцев в организации:",count)
