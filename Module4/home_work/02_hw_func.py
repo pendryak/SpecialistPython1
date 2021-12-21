@@ -5,9 +5,21 @@
 # При решении задачи необходимо использовать функцию расстояния между двумя точками.
 
 def distance(x1, y1, x2, y2):
-    # TODO: тело, которое вы реализовали на практической работе
-    pass
+    return math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
 
 
-# TODO: your code here
-print("Самый короткий отрезок:", ...)  # Выводим название отрезка, например “АС”.
+xa = float(input("xa = "))
+ya = float(input("ya = "))
+xb = float(input("xb = "))
+yb = float(input("yb = "))
+xc = float(input("xc = "))
+yc = float(input("yc = "))
+
+ab = distance(xa, ya, xb, yb)
+ac = distance(xa, ya, xc, yc)
+bc = distance(xc, yc, xb, yb)
+
+dist = {"AB": ab, "AC": ac, "BC": bc}
+min_line = min(dist.values())
+line = [k for k, v in dist.items() if v == min_line]
+print("Самый короткий отрезок:", line[0])  # Выводим название отрезка, например “АС”.
