@@ -3,6 +3,8 @@
 # Подсказка:
 # для получения случайного числа используйте функцию randint() модуля random
 import random
-numbers = []
+n = int(input("n = "))
+numbers = [random.randint(-100, 100) for _ in range(n)]
+print(numbers)
 # print(random.randint(10, 20))  # раскомментируйте, чтобы посмотреть работу функции randint
 # TODO: your code here
