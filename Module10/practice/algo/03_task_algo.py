@@ -8,3 +8,39 @@
 # и Y символов “G” (обозначающих девочек), удовлетворяющую условию задачи. Пробелы между символами выводить не нужно.
 # Если рассадить мальчиков и девочек согласно условию задачи невозможно, выведите строку “Нет решения”.
 
+def cinema(x, y):
+    n = max(x, y)
+    m = min(x, y)
+
+    if n > 2 * m and m != 0 or n == 0:
+        return 0
+    if m == 0:
+        return '1'
+    row = ''
+    i = 0
+    while n > m + 1:
+        row += '101'
+        i += 3
+        n -= 2
+        m -= 1
+    while i < x + y:
+        row += '10'
+        i += 2
+    if i > x + y:
+        row = row[:-1]
+    return row
+
+
+x = int(input("Девочек: "))
+y = int(input("Мальчиков: "))
+row = cinema(x, y)
+if not row:
+    print("Нет решения")
+else:
+    if x > y:
+        row = row.replace('1', 'G')
+        row = row.replace('0', 'B')
+    else:
+        row = row.replace('0', 'G')
+        row = row.replace('1', 'B')
+    print(row)
