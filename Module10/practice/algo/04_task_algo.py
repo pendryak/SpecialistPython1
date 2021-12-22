@@ -20,3 +20,21 @@
 # Слово: | s | a | n | d | w | i | c | h |
 #
 # Шифр:  | s | h | a | c | n | i | d | w |
+
+
+def decrypt(message):
+    decrypt_mes = ''
+    mes_len = len(message)
+    i = 0
+    while i < mes_len:
+        decrypt_mes += message[i]
+        i += 2
+    i = mes_len - 1 - mes_len % 2
+    while i > 0:
+        decrypt_mes += message[i]
+        i -= 2
+    return decrypt_mes
+
+
+message = input("Введите зашифрованное сообщение: ")
+print("Расшифрованное сообщение:", decrypt(message))
