@@ -15,3 +15,8 @@ fruits = ["яблоко", "банан", "киви", "арбуз"]
 
 # Важно! Ваше решение должно работать с любыми корректными "исходными данными"
 # Проверьте это, добавив или удалив несколько элементов списка
+
+
+length = max(len(fruit) for fruit in fruits)
+for num, fruit in enumerate(fruits,1):
+    print(str(num)+'. '+fruit.rjust(length))
