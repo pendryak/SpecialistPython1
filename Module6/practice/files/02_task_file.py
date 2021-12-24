@@ -7,9 +7,16 @@
 # 2. Цену самого дорогого товара
 # 3. Цену самого дешевого товара
 
-# Совет: сначала считайте все цены из файла, сохраните в список,
-# преобразовав каждую цену к числу(цены в файле хранятся в виде строк)
-# А затем, работам с привычным списком, выполните задания
-prices = []
+path = "files/sold.txt"
 
-# Подсказка: для преобразования строки в список вспомните про метод строки .split()
+f = open(path, "r")
+prices = []
+prices_str = " ".join(f.read().split()).split()
+for price in prices_str:
+    prices.append(float(price))
+
+prices = sorted(prices)
+print(prices)
+print("Товаров продано на сумму:",sum(prices))
+print("Самый дешевый:",prices[0])
+print("Самый дорогой:",prices[len(prices)-1])
